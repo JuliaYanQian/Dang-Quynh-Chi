@@ -8,6 +8,9 @@ on:
 jobs:
   run-notebook:
     runs-on: ubuntu-latest
+    # Add a timeout for the entire job to prevent indefinite runs
+    timeout-minutes: 60 # Set a reasonable timeout, e.g., 60 minutes
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,7 +25,8 @@ jobs:
           pip install pandas requests google-auth google-api-python-client urllib3 openpyxl google-colab
 
       - name: Run Colab Notebook
-        uses: colab-actions/run-notebook@v1
+        # Ensure the action name and version are exactly correct
+        uses: colab-actions/run-notebook@v1 
         with:
           notebook: 'gg_sheet.ipynb'
           github_token: ${{ secrets.GITHUB_TOKEN }}
