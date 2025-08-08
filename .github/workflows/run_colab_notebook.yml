@@ -33,7 +33,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pandas requests google-auth google-api-python-client urllib3 openpyxl nbconvert jupyter
+          pip install pandas requests google-auth google-api-python-client urllib3 openpyxl nbconvert jupyter pandas-gbq
 
       - name: Run Jupyter Notebook
         # Executes the notebook using nbconvert and overwrites the original with the output.
