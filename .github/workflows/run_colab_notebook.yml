@@ -37,7 +37,7 @@ jobs:
 
       - name: Run Jupyter Notebook
         # Executes the notebook using nbconvert and overwrites the original with the output.
-        run: jupyter nbconvert --to notebook --execute --inplace gg_sheet.ipynb
+        run: jupyter nbconvert --to notebook --execute --inplace BigQuery.ipynb
 
       - name: Commit executed notebook
         # This step commits the executed notebook back to the repository.
@@ -46,4 +46,4 @@ jobs:
         with:
           commit_message: "Automated: Executed notebook via GitHub Actions"
           branch: main
-          file_pattern: 'gg_sheet.ipynb' # Only commits the specified notebook file
+          file_pattern: 'BigQuery.ipynb' # Only commits the specified notebook file
