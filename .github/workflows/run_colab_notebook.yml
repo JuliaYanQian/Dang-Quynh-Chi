@@ -7,7 +7,7 @@ on:
   schedule:
     # Runs every day at 03:00 AM UTC.
     # Adjust the cron expression to your desired UTC time.
-    - cron: '0 5 * * *'
+    - cron: '00 13 * * *'
 
 jobs:
   run-notebook:
